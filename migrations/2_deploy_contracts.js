@@ -39,5 +39,5 @@ module.exports = function(deployer) {
   // deployer.link(Pausable, TetherToken);
   // // deployer.link(BlackList, TetherToken);
   // // deployer.link(StandardToken, TetherToken);
-  deployer.deploy(TetherToken, 100000, 18);
+  deployer.deploy(TetherToken, 100000, "MyToken", "MT", 18);
 };

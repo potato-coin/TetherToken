@@ -15,6 +15,6 @@ instance.getOwner()
 let accounts = await web3.eth.getAccounts()
 instance.transfer(accounts[1], 10)
 
-let balance = await instance.balanceOf(account[1])
+let balance = await instance.balanceOf(accounts[1])
 balance.toNumber()
 ```

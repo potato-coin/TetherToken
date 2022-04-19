@@ -2,7 +2,7 @@
  *Submitted for verification at Etherscan.io on 2017-11-28
 */
 
-pragma solidity >=0.4.22 <0.6.0;
+pragma solidity ^0.5.16;
 
 import "./Pausable.sol";
 import "./StandardToken.sol";
@@ -19,8 +19,8 @@ contract UpgradedStandardToken is StandardToken{
 
 contract TetherToken is Pausable, StandardToken, BlackList {
 
-    string public name = "MyToken";
-    string public symbol = "MT";
+    string public name;
+    string public symbol;
     uint public decimals;
     address public upgradedAddress;
     bool public deprecated;
@@ -30,8 +30,10 @@ contract TetherToken is Pausable, StandardToken, BlackList {
     //
     // @param _balance Initial supply of the contract
     // @param _decimals Token decimals
-    constructor (uint _initialSupply, uint _decimals) public {
+    constructor (uint _initialSupply, string memory _name, string memory _symbol, uint _decimals) public {
         _totalSupply = _initialSupply;
+        name = _name;
+        symbol = _symbol;
         decimals = _decimals;
         balances[owner] = _initialSupply;
         deprecated = false;
